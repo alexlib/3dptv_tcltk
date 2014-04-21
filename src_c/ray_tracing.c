@@ -232,6 +232,7 @@ void ray_tracing_v2 (double x, double y, Exterior Ex, Interior I, Glass G, mm_np
 	n=(b[0]*bn[0]+b[1]*bn[1]+b[2]*bn[2]);
 	bp[0]=b[0]-bn[0]*n;bp[1]=b[1]-bn[1]*n;bp[2]=b[2]-bn[2]*n;
 	dummy=sqrt(bp[0]*bp[0]+bp[1]*bp[1]+bp[2]*bp[2]);
+	if (dummy == 0) dummy = 1.0;
 	bp[0]=bp[0]/dummy;bp[1]=bp[1]/dummy;bp[2]=bp[2]/dummy;
 
 	p=sqrt(1-n*n);
@@ -261,6 +262,7 @@ void ray_tracing_v2 (double x, double y, Exterior Ex, Interior I, Glass G, mm_np
 	n=(a2*bn[0]+b2*bn[1]+c2*bn[2]);
 	bp[0]=a2-bn[0]*n;bp[1]=b2-bn[1]*n;bp[2]=c2-bn[2]*n;
 	dummy=sqrt(bp[0]*bp[0]+bp[1]*bp[1]+bp[2]*bp[2]);
+	if (dummy == 0) dummy = 1.0;
 	bp[0]=bp[0]/dummy;bp[1]=bp[1]/dummy;bp[2]=bp[2]/dummy;
 
 	p=sqrt(1-n*n);
